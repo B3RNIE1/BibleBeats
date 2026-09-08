@@ -1,4 +1,4 @@
-// OFFICIAL AUDIO DATABASE & METADATA ACCENTS
+// OFFICIAL AUDIO DATABASE & METADATA CONFIGURATION (BIBLEBEATS CLIENT)
 const trackDatabase = [
     {
         id: 0,
@@ -7,6 +7,7 @@ const trackDatabase = [
         album: "His Glory Alone II",
         genre: "CHH Trap / Melodic",
         duration: "3:18",
+        coverArt: "https://unsplash.com", // Glowing Neon Abstract
         spotifyEmbedUrl: "https://spotify.com",
         lyrics: [
             "[Verse 1 - KB]",
@@ -27,6 +28,7 @@ const trackDatabase = [
         album: "INDIE500",
         genre: "CHH Underground / Trap",
         duration: "2:54",
+        coverArt: "https://unsplash.com", // Dark Industrial Group Aesthetic
         spotifyEmbedUrl: "https://spotify.com",
         lyrics: [
             "[Verse 1 - nobigdyl.]",
@@ -47,9 +49,10 @@ const trackDatabase = [
         album: "Single Release",
         genre: "CHH Trap-Soul",
         duration: "3:02",
+        coverArt: "https://unsplash.com", // Shattered Stone Texture Visual
         spotifyEmbedUrl: "https://spotify.com",
         lyrics: [
-            "[Chorus]",
+            "[Chorus - Kijan Boone]",
             "Sticks and stones they may break my bones",
             "But the word of the Lord it can save my soul",
             "The words they say will never hurt me",
@@ -67,6 +70,7 @@ const trackDatabase = [
         album: "Kingdom Heat",
         genre: "Gospel Drill / Trap",
         duration: "2:45",
+        coverArt: "https://unsplash.com", // Cyberpunk Court / Basketball Glow
         spotifyEmbedUrl: "https://spotify.com",
         lyrics: [
             "[Verse 1]",
@@ -87,6 +91,7 @@ const trackDatabase = [
         album: "As I Am",
         genre: "Gospel Rap / Atl Trap",
         duration: "3:08",
+        coverArt: "https://unsplash.com", // Retro Neon Street Lightscape
         spotifyEmbedUrl: "https://spotify.com",
         lyrics: [
             "[Verse 1 - 1K Phew]",
@@ -107,6 +112,7 @@ const trackDatabase = [
         album: "The Epilogue",
         genre: "CHH Lyricism / Boom-Bap",
         duration: "3:40",
+        coverArt: "https://unsplash.com", // Cosmic Nebulae Purple Skies
         spotifyEmbedUrl: "https://spotify.com",
         lyrics: [
             "[Verse 1 - Trip Lee]",
@@ -118,6 +124,90 @@ const trackDatabase = [
         tour: [
             { date: "Nov 19", loc: "The Howard (DC)" },
             { date: "Nov 22", loc: "Rebel (ON)" }
+        ]
+    },
+    {
+        id: 6,
+        title: "Coming in Hot",
+        artist: "Lecrae & Andy Mineo",
+        album: "Never Land II",
+        genre: "CHH Core / Anthemic",
+        duration: "3:12",
+        coverArt: "https://unsplash.com", // Red Flames & Purple Overlays
+        spotifyEmbedUrl: "https://spotify.com",
+        lyrics: [
+            "[Chorus - Andy Mineo]",
+            "Coming in hot! We setup the block",
+            "They told us to fold but we stay at the top",
+            "Unashamed with the message, we setting it loose",
+            "We runnin' the engine, we drinking the juice."
+        ],
+        tour: [
+            { date: "Oct 28", loc: "Red Rocks Amphitheater" },
+            { date: "Nov 01", loc: "The Wiltern (CA)" }
+        ]
+    },
+    {
+        id: 7,
+        title: "Altar",
+        artist: "Hulvey",
+        album: "CRY",
+        genre: "CHH worship / Melodic",
+        duration: "3:42",
+        coverArt: "https://unsplash.com", // Ambient Church Light Rays
+        spotifyEmbedUrl: "https://spotify.com",
+        lyrics: [
+            "[Verse 1 - Hulvey]",
+            "Leave it at the altar, don't carry the weight",
+            "He already paid for the sins at the gate",
+            "From Brunswick to worldwide, the testament rings",
+            "I'm giving my life to the King of all Kings."
+        ],
+        tour: [
+            { date: "Sep 30", loc: "State Farm Arena (GA)" },
+            { date: "Oct 05", loc: "Madison Square Garden" }
+        ]
+    },
+    {
+        id: 8,
+        title: "Love Like That",
+        artist: "Torey D'Shaun",
+        album: "Single Vault",
+        genre: "CHH Narrative Rap",
+        duration: "2:58",
+        coverArt: "https://unsplash.com", // Retro Vibrant Neon Backgrounds
+        spotifyEmbedUrl: "https://spotify.com",
+        lyrics: [
+            "[Verse 1 - Torey D'Shaun]",
+            "They never seen a love like that, genuine from the back",
+            "He picked me up out of the trap, corrected my map",
+            "Torey D'Shaun with the script, no capping inside",
+            "We keeping the light altogether alive."
+        ],
+        tour: [
+            { date: "Dec 01", loc: "The Lyric Theater (LA)" },
+            { date: "Dec 05", loc: "Orpheum Theater (TN)" }
+        ]
+    },
+    {
+        id: 9,
+        title: "Forever in Faith",
+        artist: "Alex Jean",
+        album: "Soul Trap Volume 1",
+        genre: "CHH Trap-Soul / Melodic",
+        duration: "3:05",
+        coverArt: "https://unsplash.com", // Minimal Obsidian Grid Aesthetic
+        spotifyEmbedUrl: "https://spotify.com",
+        lyrics: [
+            "[Verse 1 - Alex Jean]",
+            "Forever in faith, I can never be moved",
+            "Look at the tracks and the ways He approved",
+            "Melodic soul vibrations praising the Name",
+            "Washing out all of the sorrow and shame."
+        ],
+        tour: [
+            { date: "Oct 19", loc: "The Masonic (CA)" },
+            { date: "Oct 22", loc: "Paramount Theatre (WA)" }
         ]
     }
 ];
@@ -143,111 +233,4 @@ function buildTrackLibrary() {
         node.setAttribute('data-search', `${track.title.toLowerCase()} ${track.artist.toLowerCase()} ${track.genre.toLowerCase()}`);
 
         node.innerHTML = `
-            <div class="track-info-mini">
-                <span class="track-title-mini">${track.title}</span>
-                <span class="track-artist-mini">${track.artist} • ${track.genre}</span>
-            </div>
-            <i class="${isLiked} fa-heart heart-btn" onclick="toggleTrackLike(event, ${track.id})"></i>
-        `;
-        container.appendChild(node);
-    });
-}
-
-function loadTrack(index) {
-    currentTrackIndex = index;
-    const track = trackDatabase[index];
-
-    const nodes = document.querySelectorAll('.track-node');
-    nodes.forEach((n, idx) => {
-        n.classList.toggle('active', idx === index);
-    });
-
-    document.getElementById('spotifyContainer').innerHTML = `
-        <iframe src="${track.spotifyEmbedUrl}" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    `;
-
-    document.getElementById('heroTrackName').innerText = track.title;
-    document.getElementById('heroArtistAlbum').innerText = `${track.artist} — Album: ${track.album}`;
-    document.getElementById('profileArtistName').innerText = track.artist;
-    
-    const lyricsBox = document.getElementById('lyricsBox');
-    lyricsBox.innerHTML = '';
-    track.lyrics.forEach((line, lIdx) => {
-        const p = document.createElement('p');
-        p.className = `lyric-line ${lIdx === 1 ? 'highlight' : ''}`;
-        p.innerText = line;
-        lyricsBox.appendChild(p);
-    });
-
-    const tourBox = document.getElementById('tourBox');
-    tourBox.innerHTML = '';
-    track.tour.forEach(t => {
-        const div = document.createElement('div');
-        div.className = 'tour-row';
-        div.innerHTML = `<span class="tour-date">${t.date}</span><span class="tour-loc">${t.loc}</span>`;
-        tourBox.appendChild(div);
-    });
-
-    document.getElementById('footerTitle').innerText = track.title;
-    document.getElementById('footerArtist').innerText = track.artist;
-    document.getElementById('footerDuration').innerText = track.duration;
-    
-    const footerHeart = document.getElementById('footerHeart');
-    footerHeart.className = likedTracks.has(track.id) ? "fa-solid fa-heart heart-btn liked" : "fa-regular fa-heart heart-btn";
-}
-
-function handleTrackNodeClick(event, id) {
-    if(event.target.classList.contains('heart-btn')) return;
-    loadTrack(id);
-}
-
-function toggleTrackLike(event, id) {
-    if(event) event.stopPropagation();
-    if(likedTracks.has(id)) {
-        likedTracks.delete(id);
-    } else {
-        likedTracks.add(id);
-    }
-    buildTrackLibrary();
-    if(currentTrackIndex === id) {
-        loadTrack(currentTrackIndex);
-    }
-}
-
-function toggleFooterLike() {
-    toggleTrackLike(window.event, currentTrackIndex);
-}
-
-function nextTrack() {
-    let nextIdx = currentTrackIndex + 1;
-    if(nextIdx >= trackDatabase.length) nextIdx = 0;
-    loadTrack(nextIdx);
-}
-
-function prevTrack() {
-    let prevIdx = currentTrackIndex - 1;
-    if(prevIdx < 0) prevIdx = trackDatabase.length - 1;
-    loadTrack(prevIdx);
-}
-
-function filterLibrary() {
-    const query = document.getElementById('librarySearch').value.toLowerCase();
-    const nodes = document.querySelectorAll('.track-node');
-    
-    nodes.forEach(node => {
-        const searchString = node.getAttribute('data-search');
-        node.style.display = searchString.includes(query) ? 'flex' : 'none';
-    });
-}
-
-function generate64NodeVisualizer() {
-    const container = document.getElementById('nodesContainer');
-    container.innerHTML = '';
-    for(let i = 0; i < 32; i++) { 
-        const node = document.createElement('div');
-        node.className = 'v-node';
-        node.style.animationDelay = `${(Math.random() * 0.8).toFixed(2)}s`;
-        node.style.animationDuration = `${(Math.random() * 0.6 + 0.6).toFixed(2)}s`;
-        container.appendChild(node);
-    }
-}
+            <div style="display: flex; align-items: center; gap: 10px;">
