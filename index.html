@@ -27,7 +27,7 @@
             <div>
                 <p class="nav-section-title" style="color: #a855f7; font-weight: 800; margin-bottom: 12px;">CHH Track Vault</p>
                 <div class="track-list" id="sidebarTracks">
-                    <!-- Dynamic rows from app.js will render directly here -->
+                    <!-- Tracks will load here instantly -->
                 </div>
             </div>
         </aside>
@@ -142,7 +142,48 @@
         </div>
     </footer>
 
-    <!-- Operational Logic Script File Linkage -->
-    <script src="app.js"></script>
-</body>
-</html>
+    <!-- INLINE AUTO-FAILSAFE ENGINE (Guarantees track load even if app.js delays) -->
+    <script>
+        const trackDatabase = [
+            {
+                id: 0,
+                title: "I'll Love",
+                artist: "KB",
+                album: "His Glory Alone II",
+                genre: "CHH Trap / Melodic",
+                duration: "3:18",
+                coverArt: "https://unsplash.com",
+                spotifyEmbedUrl: "https://spotify.com",
+                lyrics: ["[Verse 1 - KB]", "If I lose it all, if the kingdom falls", "You remain steady when my back's against the wall", "Through the fire, through the valley low", "I will love You for who You are, not just what You bestow"],
+                tour: [{ date: "Oct 14", loc: "The Ledge Amp (MN)" }, { date: "Oct 16", loc: "House of Blues (OH)" }]
+            },
+            {
+                id: 1,
+                title: "TR!BE ON THE MOVE",
+                artist: "indie tribe.",
+                album: "INDIE500",
+                genre: "CHH Underground / Trap",
+                duration: "2:54",
+                coverArt: "https://unsplash.com",
+                spotifyEmbedUrl: "https://spotify.com",
+                lyrics: ["[Verse 1 - nobigdyl.]", "Would the Lord forgive me if I killed the beat?", "Would it be a sin if I had did it for the trinity?", "Jesus said that we should have affection for our enemies", "Then He flipped the tables, think I'm picking up the recipe"],
+                tour: [{ date: "Nov 02", loc: "Holy Smoke Fest (GA)" }, { date: "Nov 05", loc: "The Fillmore (NC)" }]
+            },
+            {
+                id: 2,
+                title: "Sticks and Stones",
+                artist: "Kijan Boone",
+                album: "Single Release",
+                genre: "CHH Trap-Soul",
+                duration: "3:02",
+                coverArt: "https://unsplash.com",
+                spotifyEmbedUrl: "https://spotify.com",
+                lyrics: ["[Chorus]", "Sticks and stones they may break my bones", "But the word of the Lord it can save my soul", "The words they say will never hurt me", "That's why I'mma take my mind and give it to the Lord"],
+                tour: [{ date: "Sep 22", loc: "The Underground (TX)" }, { date: "Sep 25", loc: "Warehouse Live (TX)" }]
+            },
+            {
+                id: 3,
+                title: "Ja Morant",
+                artist: "Kijan Boone",
+                album: "Kingdom Heat",
+                genre: "Gospel Drill / Trap",
